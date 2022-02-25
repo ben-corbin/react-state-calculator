@@ -8,7 +8,8 @@ function App() {
   let total = 0
   
   // This sets the value of numOne and numTwo to be "0" and gives me the function 
-  // setNumOne & setNumTwo to be able to change that value
+  // setNumOne & setNumTwo to be able to change that value and re-renders any 
+  // component using this state, in this case that is App
 
   const [numOne, setNumOne] = useState("0")
   const [numTwo, setNumTwo] = useState("0")
@@ -50,7 +51,9 @@ function App() {
     return (current + next)
   }
 
-  // Calculate the totals
+  // Calculate the totals, this will udpate no matter which of the variables
+  // change becuase each time state is updated, the state functions will re-render
+  // the component using that state, in this case that is App
 
  if (arithmetic === "+") {
    total = Number(numOne) + Number(numTwo)
